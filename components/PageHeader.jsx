@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
+import { t } from '@/lib/translations';
 
 // Helper: title-case from slug/segment
 function toTitleCase(str = '') {
@@ -126,7 +127,7 @@ export default function PageHeader({ pagePath, fallbackHeading, fallbackSubheadi
         ) : null}
         {final.breadcrumb_enabled ? (
           <p className="opacity-99 mb-4" style={{ position: 'relative', zIndex: 1, color: textColor }}>
-            <a href="/" className="hover:underline" style={{ color: textColor }}>Home</a>
+            <a href="/" className="hover:underline" style={{ color: textColor }}>{t('home')}</a>
             {final.parent_label ? (
               <>
                 {' '}/{' '}

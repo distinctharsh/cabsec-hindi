@@ -18,10 +18,10 @@ async function setupDatabase() {
 
 
     // Create database
-    await connection.query('CREATE DATABASE IF NOT EXISTS cabsec_cms');
+    await connection.query('CREATE DATABASE IF NOT EXISTS cabsec_cms_hi');
 
     // Use the database
-    await connection.query('USE cabsec_cms');
+    await connection.query('USE cabsec_cms_hi');
 
     // Read and execute the schema
     const schemaPath = path.join(__dirname, 'lib', 'cms-schema.sql');

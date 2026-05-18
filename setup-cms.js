@@ -28,7 +28,7 @@ if (!fs.existsSync(envFile)) {
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=
-DB_NAME=cabsec_cms
+DB_NAME=cabsec_cms_hi
 
 # JWT Secret (change this in production)
 JWT_SECRET=your-super-secret-jwt-key-change-in-production-${Date.now()}
