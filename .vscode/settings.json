@@ -1,0 +1,13 @@
+{
+    "accessibility.signals.chatResponseReceived": {
+        "sound": "off"
+    },
+    "accessibility.signals.chatUserActionRequired": {
+        "sound": "off",
+        "announcement": "off"
+    },
+    "window.closeWhenEmpty": false,
+    "editor.cursorBlinking": "smooth",
+    "editor.find.history": "never",
+    "editor.find.replaceHistory": "never"
+}

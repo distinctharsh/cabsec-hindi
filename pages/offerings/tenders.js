@@ -110,8 +110,9 @@ export default function Tenders() {
                 onChange={(e) => setPerPage(Number(e.target.value))}
                 className="border px-2"
               >
+                <option value={5}>5</option>
                 <option value={10}>10</option>
-                <option value={20}>20</option>
+                <option value={15}>15</option>
               </select>
             </div>
 

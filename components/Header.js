@@ -79,7 +79,6 @@ export default function Header() {
                 <img src="/images/icons/skip.svg" alt={t('skip_to_main_content_label')} />
               </a>
               <div className="border-x border-[#162f6a] p-[2px] flex items-center">
-                {/* Bhashini plugin will hydrate this empty container into the dropdown */}
                 <div className="bhashini-plugin-container" />
               </div>
               <AccessibilityBar />

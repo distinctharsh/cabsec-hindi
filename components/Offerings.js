@@ -200,7 +200,7 @@ export default function Offerings() {
 
             <div className="mt-3 flex justify-end">
               <button className="view-btn">
-                VIEW MORE
+                {t('view_more')}
                 <FiChevronRight />
               </button>
             </div>

@@ -168,9 +168,9 @@ export default function Vacancies() {
                   }}
                   className="px-3 py-2 bg-white outline-none"
                 >
-                  <option value={6}>6 {t('per_page')}</option>
-                  <option value={9}>9 {t('per_page')}</option>
-                  <option value={12}>12 {t('per_page')}</option>
+                  <option value={5}>5 {t('per_page')}</option>
+                  <option value={10}>10 {t('per_page')}</option>
+                  <option value={15}>15 {t('per_page')}</option>
                 </select>
 
               </div>

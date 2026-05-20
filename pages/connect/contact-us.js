@@ -1,31 +1,14 @@
 import Footer from "@/components/Footer";
 import SubNavTabs from "@/components/SubNavTabs";
+import PageHeader from "@/components/PageHeader";
+import { t } from '@/lib/translations';
 
 export default function Contact() {
   return (
     <>
       <main id="main">
-        {/* Hero Section */}
-        <section
-          className="bg-[#123a6b] text-white px-4 hero-before"
-          style={{
-            background: `url('/images/connect/banner.jpg') no-repeat center center`,
-            backgroundSize: 'cover',
-            paddingTop: '90px',
-            paddingBottom: '90px',
-            position: 'relative'
-          }}
-        >
-          <div className="gi-container relative z-[1]">
-            <p className="opacity-99 mb-4">
-              <a href="/" className="hover:underline">Home</a> / <a href="/connect/contact-us" className="underline hover:decoration-yellow-400 hover:decoration-2 hover:underline-offset-2">Contact</a>
-            </p>
-            <h1 className="text-4xl font-bold opacity-99 text-white">Contact Us</h1>
-          </div>
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgb(22, 47, 106) 20%, transparent 70%)' }} />
-        </section>
 
-        {/* Tabs (DB-driven for current route) */}
+        <PageHeader />
         <SubNavTabs />
 
         {/* Main content */}
@@ -39,8 +22,8 @@ export default function Contact() {
                     <span className="material-symbols-outlined">location_on</span>
                     <div aria-label="location: Cabinet Secretariat, Government of India, Electronics Niketan, 6, CGO Complex, Lodhi Road, New Delhi – 110003">
                       <p>
-                        <b className="font-24-500">Address</b><br />
-                        Seva Teerth <br/>New Delhi – 110011
+                        <b className="font-24-500">पता</b><br />
+                        सेवा तीर्थ <br />नई दिल्ली – 110011
                       </p>
                     </div>
                   </div>
@@ -48,23 +31,23 @@ export default function Contact() {
                   {/* Contacts */}
                   <div className="ms-5 mt-4 space-y-5">
                     <div>
-                      <p className="policyManager mb-0"><b>Content Related and Web Information Manager (WIM)</b></p>
-                      <p className="mb-0">Shri Ashish Malhotra</p>
-                      <p className="mb-0">Director</p>
-                      <p className="mb-0">Seva Teerth,New Delhi - 110011</p>
+                      <p className="policyManager mb-0"><b>सामग्री संबंधित और वेब सूचना प्रबंधक (डब्ल्यू.आई.एम.)</b></p>
+                      <p className="mb-0">श्री आशीष मल्होत्रा</p>
+                      <p className="mb-0">निर्देशक</p>
+                      <p className="mb-0">सेवा तीर्थ, नई दिल्ली - 110011</p>
                       <p className="mb-0">+91-11-23018467</p>
                       <div className="flex justify-start items-start gap-2">
                         <p className="contact-email">
-                          <a className="no-underline" title="mailto:officer@nic.in" href="mailto:officer@nic.in" style={{color: 'rgba(13, 110, 253), var(--bs-link-opacity, 1))'}}>cabinet[at]nic[dot]in</a>
+                          <a className="no-underline" title="mailto:officer@nic.in" href="mailto:officer@nic.in" style={{ color: 'rgba(13, 110, 253), var(--bs-link-opacity, 1))' }}>cabinet[at]nic[dot]in</a>
                         </p>
                       </div>
                     </div>
 
                     <div>
-                      <p className="policyManager mb-0"><b>Chief Information Officer (CIO)</b></p>
-                      <p className="mb-0">Shri Satendra Singh</p>
-                      <p className="mb-0">Additional Secretary</p>
-                      <p className="mb-0">Seva Teerth,New Delhi - 110011</p>
+                      <p className="policyManager mb-0"><b>मुख्य सूचना अधिकारी (सी.आई.ओ.)</b></p>
+                      <p className="mb-0">श्री सतेन्द्र सिंह</p>
+                      <p className="mb-0">अतिरिक्त सचिव</p>
+                      <p className="mb-0">सेवा तीर्थ, नई दिल्ली - 110011</p>
                       <p className="mb-0">+91-11-23012697</p>
                       <div className="flex justify-start items-start gap-2">
                         <p className="contact-email">
@@ -73,7 +56,7 @@ export default function Contact() {
                       </div>
                     </div>
 
-              
+
                   </div>
 
                   {/* QR */}
