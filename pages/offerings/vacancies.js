@@ -36,12 +36,11 @@ export default function Vacancies() {
           description: item.description || "",
           year: item.year || "",
           published_date: item.published_date || "",
-          start_date: item.start_date || "",
           due_date: item.due_date || "",
           file_url: item.file_name
-            ? `/uploads/vacancies/${item.file_name}`
+            ? `/uploads/${item.file_name}`
             : null,
-          file_size: item.file_size || item.size || "-",
+          file_size: item.size || "-"
         }));
 
         setItems(mapped);
@@ -239,10 +238,8 @@ export default function Vacancies() {
                     {/* BUTTON */}
                     <div className="mt-6 pt-4 border-t border-gray-100">
 
-                      <a
-                        href={item.file_url || "#"}
-                        target="_blank"
-                        rel="noreferrer"
+                      <button
+                        onClick={() => router.push(`/offerings/vacancies/${item.id}`)}
                         className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-md bg-[#d2dfff] text-[#162f6a] font-semibold text-[13px] uppercase hover:bg-[#bfd0ff] transition"
                       >
                         <span
@@ -253,7 +250,7 @@ export default function Vacancies() {
                         </span>
 
                         {t('view_document')}
-                      </a>
+                      </button>
 
                     </div>
 

@@ -156,7 +156,7 @@ const Footer = () => {
           {/* Left Links Section */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             <div>
-              <h4 className="font-20-600 mb-3">{s1.title || "USEFUL LINKS"}</h4>
+              <h4 className="font-20-600 mb-3">{t("useful_links")}</h4>
               <ul className="space-y-2 text-base">
                 <li>
                   <a href={s1Links[0]?.url || "#"} className="font-20-400">
@@ -173,8 +173,8 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h4 className="font-20-600 mb-3">{s2.title || "Website Policies"}</h4>
-              <ul className="space-y-2 text-base">
+              {/* <h4 className="font-20-600 mb-3">{s2.title || "Website Policies"}</h4> */}
+              <ul className="space-y-2 text-base mt-[34px]">
                 <li>
                   <a href={s2Links[0]?.url || "#"} className="font-20-400">
                     <span aria-hidden="true" className="material-symbols-outlined bhashini-skip-translation mr-2">chevron_right</span>
@@ -190,8 +190,8 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h4 className="font-20-600 mb-3">{s3.title || "Related Links"}</h4>
-              <ul className="space-y-2 text-base">
+              {/* <h4 className="font-20-600 mb-3">{s3.title || "Related Links"}</h4> */}
+              <ul className="space-y-2 text-base mt-[34px]">
                 <li>
                   <a href={s3Links[0]?.url || "#"} className="font-20-400">
                     <span aria-hidden="true" className="material-symbols-outlined bhashini-skip-translation mr-2">chevron_right</span>
