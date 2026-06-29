@@ -210,7 +210,7 @@ export default function Archives() {
                   </div>
                 `
                 : '<span></span>';
-              const viewHref = isGroup ? `/documents/report/${row.id}` : fileUrl;
+              const viewHref = isGroup ? `/documents/report/${row.id}?archived=1` : fileUrl;
               const viewAttrs = isGroup ? '' : target;
               const viewText = isGroup ? 'View All' : 'View';
               return `
@@ -349,7 +349,15 @@ export default function Archives() {
   return (
     <>
       <main id="main">
-        <PageHeader pagePath="/documents/reports" />
+        <PageHeader
+          pagePath={
+            pageType === 'vacancies'
+              ? '/vacancies'
+              : pageType === 'tenders'
+              ? '/tenders'
+              : '/documents/' + String(pageType)
+          }
+        />
         <SubNavTabs pagePath="/archives/all" />
         <section className="mt-10 py-10" style={{ borderRadius: '20px' }}>
           <div className="gi-container">
@@ -371,7 +379,6 @@ export default function Archives() {
                     <span aria-hidden="true" className="material-symbols-outlined">sort</span>
                   </span>
                   <select className="px-3 py-2 bg-white outline-none" role="listbox" aria-label="select" value={sort} onChange={(e) => setSort(e.target.value)}>
-                    <option value="">Sort by</option>
                     <option value="Newest">Latest</option>
                     <option value="Oldest">Oldest</option>
                   </select>
@@ -394,9 +401,11 @@ export default function Archives() {
                     <span className="material-symbols-outlined">list_alt</span>
                   </span>
                   <select id="pageLimitSelect" className="px-3 py-2 bg-white outline-none" role="combobox" aria-label="pages" value={perPage} onChange={(e) => setPerPage(parseInt(e.target.value, 10))}>
-                    <option value={10}>10 per page</option>
-                    <option value={15}>15 per page</option>
-                    <option value={20}>20 per page</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="-1">All</option>
                   </select>
                 </div>
               </div>

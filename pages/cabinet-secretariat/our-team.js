@@ -374,12 +374,9 @@ export default function OurTeam() {
                         <p className="font-16-700">{person.name}</p>
                         <p className="font-16-400">{person.designation}</p>
                       </div>
-
-                      {/* Contact */}
                       <div className="space-y-1">
                         {person.contact.map((contact, i) => (
                           <p key={i} className="flex items-center gap-2">
-
                             {contact.type === "phone" && (
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -390,7 +387,6 @@ export default function OurTeam() {
                                 <path d="M2.003 5.884c-.09-1.04.71-1.93 1.75-2.02l2.51-.22c.87-.08 1.66.46 1.9 1.3l.57 2.07c.2.74-.04 1.53-.62 2.05l-1.12.98a14.99 14.99 0 007.58 7.58l.98-1.12c.52-.58 1.31-.82 2.05-.62l2.07.57c.84.24 1.38 1.03 1.3 1.9l-.22 2.51c-.09 1.04-.98 1.84-2.02 1.75-9.9-.85-17.8-8.74-18.66-18.64z" />
                               </svg>
                             )}
-
                             {contact.type === "fax" && (
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -401,7 +397,6 @@ export default function OurTeam() {
                                 <path d="M6 3h12v5H6V3zm-2 6h16a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V11a2 2 0 012-2zm4 2v6h8v-6H8z" />
                               </svg>
                             )}
-
                             {contact.type === "email" && (
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -412,7 +407,6 @@ export default function OurTeam() {
                                 <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm-1.4 4.25l-6.13 4.09a1 1 0 01-1.06 0L5.28 8.25a1 1 0 111.1-1.66L12 10.3l5.62-3.7a1 1 0 111.1 1.66z" />
                               </svg>
                             )}
-
                             {contact.type === "email" ? (
                               <a
                                 href={`mailto:${contact.value.replace(/\[at\]/g, '@').replace(/\[dot\]/g, '.')}`}
@@ -430,12 +424,9 @@ export default function OurTeam() {
                             ) : (
                               <span className="font-16-400">{contact.value}</span>
                             )}
-
                           </p>
                         ))}
                       </div>
-
-                      {/* Address */}
                       <div className="font-16-400">
                         {person.address}
                       </div>

@@ -24,13 +24,18 @@ export default async function handler(req, res) {
     const [colsArchived] = await pool.query('SHOW COLUMNS FROM reports LIKE ?', ['is_archived']);
     const hasArchived = Array.isArray(colsArchived) && colsArchived.length > 0;
 
+    // Detect whether `is_archived` column exists in report_files table
+    const [colsFilesArchived] = await pool.query('SHOW COLUMNS FROM report_files LIKE ?', ['is_archived']);
+    const hasFilesArchived = Array.isArray(colsFilesArchived) && colsFilesArchived.length > 0;
+
     let params = [];
     let whereClause = '';
     if (archivedOnly) {
-      if (hasArchived) {
-        whereClause = 'WHERE r.is_archived = TRUE';
+      // Only show reports that have archived files
+      if (hasFilesArchived) {
+        whereClause = 'WHERE EXISTS (SELECT 1 FROM report_files rf WHERE rf.report_id = r.id AND rf.is_archived = TRUE)';
       } else {
-        // No archived column; nothing to return for archived-only requests
+        // No is_archived in report_files; nothing to return for archived-only requests
         whereClause = 'WHERE 0';
       }
     } else {
@@ -74,11 +79,17 @@ export default async function handler(req, res) {
       }
     }
 
+    // Build subquery conditions for report_files based on is_archived
+    // When archived_only is true, show archived files; otherwise show non-archived files
+    const archivedFileFilter = archivedOnly ? 'TRUE' : 'FALSE';
+    const filesWhereClause = hasFilesArchived ? `WHERE rf.report_id = r.id AND rf.is_archived = ${archivedFileFilter}` : 'WHERE rf.report_id = r.id';
+    const firstFileWhereClause = hasFilesArchived ? `WHERE rf2.report_id = r.id AND rf2.is_archived = ${archivedFileFilter}` : 'WHERE rf2.report_id = r.id';
+
     const [rows] = await pool.query(
       `SELECT r.id, r.title, r.type, r.year, r.size, r.file_url,
               r.item_count,
-              (SELECT COUNT(1) FROM report_files rf WHERE rf.report_id = r.id) AS files_count,
-              (SELECT rf2.file_url FROM report_files rf2 WHERE rf2.report_id = r.id ORDER BY rf2.id ASC LIMIT 1) AS first_file_url
+              (SELECT COUNT(1) FROM report_files rf ${filesWhereClause}) AS files_count,
+              (SELECT rf2.file_url FROM report_files rf2 ${firstFileWhereClause} ORDER BY rf2.id ASC LIMIT 1) AS first_file_url
        FROM reports r
        ${whereClause}
        ORDER BY r.year DESC, r.display_order ASC, r.created_at DESC`,
