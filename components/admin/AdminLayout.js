@@ -69,7 +69,7 @@ const AdminLayout = ({ children }) => {
         { name: 'Partner Logos', href: '/admin/partner-logos', icon: '🏢', description: 'Manage partner logos carousel' },
         { name: 'What\'s New', href: '/admin/whats-new', icon: '📰', description: 'Manage what\'s new items' },
         { name: 'Important Links', href: '/admin/important-links', icon: '🔗', description: 'Manage important links' },
-        { name: 'Offerings', href: '/admin/offerings', icon: '🎯', description: 'Manage Vacancies & Tenders' },
+        { name: 'Vacancies & Tenders', href: '/admin/offerings', icon: '🎯', description: 'Manage Vacancies & Tenders' },
         // { name: 'Recent Documents', href: '/admin/recent-docs', icon: '📄', description: 'Manage recent documents' },
         // { name: 'About Section', href: '/admin/about-section', icon: 'ℹ️', description: 'Manage About Us section' },
         // { name: 'Promo Banners', href: '/admin/promo-section', icon: '🖼️', description: 'Manage promotional banners' }
@@ -84,7 +84,7 @@ const AdminLayout = ({ children }) => {
         { name: 'Our Team', href: '/admin/our-team', icon: '👥', description: 'Manage ministry team' },
         { name: 'Directory', href: '/admin/directory', icon: '📇', description: 'Manage directory' },
         { name: 'Photo Galleries', href: '/admin/photos', icon: '📷', description: 'Manage photo galleries' },
-        { name: 'Reports', href: '/admin/reports', icon: '📑', description: 'Manage Documents > Reports' },
+        { name: 'Documents', href: '/admin/reports', icon: '📑', description: 'Manage Documents > Reports' },
         { name: 'RTI Page', href: '/admin/rti', icon: '📋', description: 'Manage RTI content & sections' }
       ]
     },

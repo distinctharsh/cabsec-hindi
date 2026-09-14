@@ -6,11 +6,11 @@ const OfferingForm = ({ offering, onSubmit, onCancel, tabType = 'schemes' }) => 
     description: '',
     link_url: '',
     category: '',
-    is_active: true,
+    is_active: 1, 
     tender_id: '',
     published_date: '',
     due_date: '',
-    file_url: '',
+    file_name: '',
     file_size: ''
   });
   const [loading, setLoading] = useState(false);
@@ -24,25 +24,24 @@ const OfferingForm = ({ offering, onSubmit, onCancel, tabType = 'schemes' }) => 
         description: offering.description || '',
         link_url: offering.link_url || '',
         category: offering.category || '',
-        is_active: offering.is_active !== undefined ? offering.is_active : true,
+        is_active: offering.is_active !== undefined ? Number(offering.is_active) : 1,
         tender_id: offering.tender_id || '',
         published_date: offering.published_date || '',
         due_date: offering.due_date || '',
-        file_url: offering.file_url || '',
+        file_name: offering.file_name || '',
         file_size: offering.file_size || ''
       });
     } else {
-      // Reset form when adding new offering
       setFormData({
         title: '',
         description: '',
         link_url: '',
         category: '',
-        is_active: true,
+        is_active: 1,
         tender_id: '',
         published_date: '',
         due_date: '',
-        file_url: '',
+        file_name: '',
         file_size: ''
       });
     }
@@ -94,7 +93,7 @@ const OfferingForm = ({ offering, onSubmit, onCancel, tabType = 'schemes' }) => 
     const { name, value, type, checked } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === 'checkbox' ? (checked ? 1 : 0) : (name === 'is_active' ? Number(value) : value)
     }));
   };
 
@@ -296,9 +295,9 @@ const OfferingForm = ({ offering, onSubmit, onCancel, tabType = 'schemes' }) => 
                     Selected: {file.name} ({(file.size / 1024).toFixed(1)} KB)
                   </div>
                 )}
-                {offering && offering.file_url && !file && (
+                {offering && offering.file_name && !file && (
                   <div className="mt-2 text-sm text-gray-600">
-                    Current file: <a href={offering.file_url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">View PDF</a>
+                    Current file: <span className="font-semibold text-gray-800">{offering.file_name}</span>
                   </div>
                 )}
               </div>
@@ -306,18 +305,21 @@ const OfferingForm = ({ offering, onSubmit, onCancel, tabType = 'schemes' }) => 
           </div>
         )}
 
-        <div className="flex items-center sm:col-span-2">
-          <input
-            type="checkbox"
-            id="is_active"
-            name="is_active"
-            checked={formData.is_active}
-            onChange={handleChange}
-            className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-          />
-          <label htmlFor="is_active" className="ml-2 block text-sm text-gray-700">
-            Make this {tabType === 'vacancies' ? 'vacancy' : tabType === 'tenders' ? 'tender' : 'offering'} visible on the website
+        <div className="sm:col-span-2">
+          <label htmlFor="status" className="block text-sm font-medium text-gray-700">
+            Status
           </label>
+          <select
+            id="status"
+            name="is_active"
+            value={formData.is_active}
+            onChange={handleChange}
+            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+          >
+            <option value={1}>Active</option>
+            <option value={2}>Archived</option>
+            <option value={0}>Deleted (Soft Delete)</option>
+          </select>
         </div>
       </div>
 

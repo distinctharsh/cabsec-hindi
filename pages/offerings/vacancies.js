@@ -192,7 +192,7 @@ export default function Vacancies() {
                           {t('latest_update')}
                         </span>
                         <span className="text-blue-600 underline text-xs max-w-[120px] truncate">
-                          {item.file_url ? "संलग्न फ़ाइल..." : "अपरिभाषित..."}
+                          {item.file_url}
                         </span>
                       </div>
                     </div>
@@ -227,6 +227,7 @@ export default function Vacancies() {
           {/* PAGINATION + ARCHIVE */}
           <div className="mt-10 flex flex-col md:flex-row items-center justify-between gap-5 border-t border-gray-200 pt-6">
             {/* PAGINATION */}
+            <div></div>
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
