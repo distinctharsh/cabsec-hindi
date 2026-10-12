@@ -10,8 +10,8 @@ const USE_DUMMY_DATA = true;
 const dummyKeyDocumentsEn = [
   { title: "AOB (Allocation of Business Rules)", url: "#" },
   { title: "TOB (Transaction of Business Rules)", url: "#" },
-  { title: "Guidelines on Cabinet Notes and Procedures", url: "#" },
-  { title: "Secretariat Instructions and Office Manual", url: "#" }
+  { title: "Handbook on Cabinet Notes", url: "#" },
+  { title: "Monitoring of inter-ministerial consultation process through the IMC module of e-SamikSha portal for implementing timelines for finalization of Cabinet/CCEA Notes- reg.", url: "#" }
 ];
 
 const dummyKeyDocumentsHi = [
@@ -126,7 +126,7 @@ export default function Offerings() {
               </div>
             )}
 
-            <div className={`bg-white ${USE_DUMMY_DATA ? 'rounded-[6px] border border-[#162f6a]' : 'rounded-b-[6px] border-t-0'} p-0 shadow-[0_1px_0_rgba(0,0,0,0.04)] h-[230px] overflow-y-auto [scrollbar-width:thin] [scrollbar-color:#123a6b_#f1f1f1]`}>
+            <div className={`bg-white ${USE_DUMMY_DATA ? 'rounded-[6px] border border-[#162f6a]' : 'rounded-b-[6px] border-t-0'} p-0 shadow-[0_1px_0_rgba(0,0,0,0.04)] h-[260px] overflow-y-auto [scrollbar-width:thin] [scrollbar-color:#123a6b_#f1f1f1]`}>
               <ul className="list-none m-0 py-2">
                 {displayList.map((item, index) => {
                   const isObj = item && typeof item === 'object';
@@ -172,7 +172,7 @@ export default function Offerings() {
               <h3 className="main-heading">{t('whats_new')}</h3>
             </div>
 
-            <div className="bg-[#162f6a] text-white rounded-[6px] p-0 shadow-[0_1px_0_rgba(0,0,0,0.04)] h-[230px] overflow-y-auto [scrollbar-width:thin] [scrollbar-color:#e6ecff_#162f6a]">
+            <div className="bg-[#162f6a] text-white rounded-[6px] p-0 shadow-[0_1px_0_rgba(0,0,0,0.04)] h-[260px] overflow-y-auto [scrollbar-width:thin] [scrollbar-color:#e6ecff_#162f6a]">
               {whatsNewLoading ? (
                 <div className="flex justify-center items-center h-32">
                   <div className="animate-pulse flex flex-col space-y-2 w-full px-6">
