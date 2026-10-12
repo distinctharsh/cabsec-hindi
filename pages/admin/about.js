@@ -173,7 +173,7 @@ export default function AdminAboutPage() {
       },
       {
         section_key: 'development_history',
-        title: 'In June, 1970 three departments namely:',
+        title: 'In June, 1970 three departments namely',
         content: 'Department of Electronics\nDepartment of Scientific and Industrial Research and\nDepartment of Personnel\n\nwere created under Cabinet Secretariat and in July, 1970, Directorate General of Revenue Intelligence-cum-Directorate of Enforcement was set up under Department of Cabinet Affairs under Cabinet Secretariat and later this directorate was shifted to Department of Personnel in August, 1970.\n\nDepartment of Scientific and Industrial Research became independent department in May, 1971 and renamed as Department of Science and Technology. Since 4th January, 1985, it is under Ministry of Science and Technology with its initial nomenclature.\n\nThe Department of Electronics became independent department in 1971 and the Department of Personnel was renamed as D/o Personnel and Administrative Reforms on 07.02.1973. Department of Personnel and Administrative Reforms was transferred to the Ministry of Home Affairs from the Cabinet Secretariat in 1977. At present, it is a part of the Ministry of Personnel, Public Grievances and Pensions with a bifurcation as Department of Personnel and training and Department of Administrative Reforms and Public Grievances.\n\nDepartment of Ocean Development was created in July 1981 under Cabinet Secretariat and became independent department in February, 1982. It became a Ministry in February, 2006, and since July, 2006, its functions are being handled by Ministry of Earth Sciences.',
         content_type: 'text',
         display_order: 8
@@ -260,14 +260,14 @@ export default function AdminAboutPage() {
             <p className="text-gray-600 mt-1">Manage About page content sections</p>
           </div>
           <div className="flex gap-2">
-            <button
+            {/* <button
               onClick={initializeDefaultContent}
               className="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
               title="Initialize default content from current About page"
             >
               <span aria-hidden="true" className="material-symbols-outlined mr-2">refresh</span>
               Initialize Default
-            </button>
+            </button> */}
             <button
               onClick={() => { setShowForm(true); setEditing(null); }}
               className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300 shadow cursor-pointer"

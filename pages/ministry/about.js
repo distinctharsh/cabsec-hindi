@@ -226,7 +226,7 @@ export default function AboutUs() {
 
 
                 <div className="mt-10">
-                  <h2 className=" text-[#123a6b] mb-2 font-24-700">In June, 1970 three departments namely:</h2>
+                  <h2 className=" text-[#123a6b] mb-2 font-24-700">In June, 1970 three departments namely</h2>
                   {loading ? (
                     <SkeletonText lines={3} />
                   ) : (
@@ -296,7 +296,7 @@ export default function AboutUs() {
                         rel="noopener noreferrer"
                         style={{ background: '#a3bbf3', color: '#162f6a', padding: '4px 8px', cursor: 'pointer', textDecoration: 'none' }}
                       >
-                        <span aria-hidden="true" className="material-symbols-outlined bhashini-skip-translation" style={{ fontSize: '15px' }}>arrow_right_alt</span>
+                        <span aria-hidden="true" className="material-symbols-outlined   " style={{ fontSize: '15px' }}>arrow_right_alt</span>
                       </a>
                     </div>
                   </div>
@@ -324,7 +324,7 @@ export default function AboutUs() {
                           className="bg-blue-100 text-blue-600 px-3 pt-1 rounded hover:bg-blue-200 inline-flex items-center"
                           style={{ textDecoration: 'none' }}
                         >
-                          <span aria-hidden="true" className="material-symbols-outlined bhashini-skip-translation" style={{ fontSize: '17px', cursor: 'pointer' }}>visibility</span>
+                          <span aria-hidden="true" className="material-symbols-outlined   " style={{ fontSize: '17px', cursor: 'pointer' }}>visibility</span>
                         </a>
                       </div>
                     </div>
@@ -352,7 +352,7 @@ export default function AboutUs() {
                           className="bg-blue-100 text-blue-600 px-3 pt-1 rounded hover:bg-blue-200 inline-flex items-center"
                           style={{ textDecoration: 'none' }}
                         >
-                          <span aria-hidden="true" className="material-symbols-outlined bhashini-skip-translation" style={{ fontSize: '17px', cursor: 'pointer' }}>visibility</span>
+                          <span aria-hidden="true" className="material-symbols-outlined   " style={{ fontSize: '17px', cursor: 'pointer' }}>visibility</span>
                         </a>
                       </div>
                     </div>
