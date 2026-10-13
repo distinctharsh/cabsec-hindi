@@ -31,27 +31,27 @@ export default function Contact() {
                   {/* Contacts */}
                   <div className="ms-5 mt-4 space-y-5">
                     <div>
-                      <p className="policyManager mb-0"><b>सामग्री संबंधित और वेब सूचना प्रबंधक (डब्ल्यू.आई.एम.)</b></p>
+                      <p className="policyManager mb-0"><b>सामग्री और वेब सूचना प्रबंधक (डब्ल्यूआईएम)</b></p>
                       <p className="mb-0">श्री आशीष मल्होत्रा</p>
                       <p className="mb-0">निर्देशक</p>
                       <p className="mb-0">सेवा तीर्थ, नई दिल्ली - 110011</p>
                       <p className="mb-0">+91-11-23018467</p>
                       <div className="flex justify-start items-start gap-2">
                         <p className="contact-email">
-                          <a className="no-underline" title="mailto:officer@nic.in" href="mailto:officer@nic.in" style={{ color: 'rgba(13, 110, 253), var(--bs-link-opacity, 1))' }}>cabinet[at]nic[dot]in</a>
+                          <a className="no-underline" title="mailto:officer@nic.in" style={{ color: 'rgba(13, 110, 253), var(--bs-link-opacity, 1))' }}>cabinet[at]nic[dot]in</a>
                         </p>
                       </div>
                     </div>
 
                     <div>
-                      <p className="policyManager mb-0"><b>मुख्य सूचना अधिकारी (सी.आई.ओ.)</b></p>
-                      <p className="mb-0">श्री सतेन्द्र सिंह</p>
-                      <p className="mb-0">अतिरिक्त सचिव</p>
+                      <p className="policyManager mb-0"><b>मुख्य सूचना अधिकारी (सीआईओ)</b></p>
+                      <p className="mb-0">श्री सोलोमन अरोकियाराज</p>
+                      <p className="mb-0">अपर सचिव</p>
                       <p className="mb-0">सेवा तीर्थ, नई दिल्ली - 110011</p>
                       <p className="mb-0">+91-11-23012697</p>
                       <div className="flex justify-start items-start gap-2">
                         <p className="contact-email">
-                          <a className="no-underline" title="mailto:officer@nic.in" href="mailto:officer@nic.in">satendra[dot]singhias[at]gov[dot]in</a>
+                          <a className="no-underline" title="mailto:officer@nic.in" >js[dot]cabinet[at]gov[dot]in</a>
                         </p>
                       </div>
                     </div>
