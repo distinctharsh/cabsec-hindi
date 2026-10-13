@@ -104,11 +104,11 @@ export default function Photos() {
                   </span>
                   <input 
                     type="search" 
-                      placeholder={t("search")} 
-                      className="flex-1 px-3 py-2 outline-none" 
-                      value={query} 
-                      onChange={(e) => setQuery(e.target.value)} 
-                    />
+                    placeholder={t("search")} 
+                    className="flex-1 px-3 py-2 outline-none" 
+                    value={query} 
+                    onChange={(e) => setQuery(e.target.value)} 
+                  />
                   <span className="flex items-center px-2 border-l border-gray-300 text-gray-600 lg:hidden">
                     <span aria-hidden="true" className="material-symbols-outlined">filter_alt</span>
                   </span>
